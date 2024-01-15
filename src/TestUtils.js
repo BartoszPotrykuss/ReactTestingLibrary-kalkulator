@@ -1,8 +1,9 @@
 import { Component } from "react";
+import React from "react";
 
 
-class TestUtils extends React.Component() {
-    contructor(props) {
+class TestUtils extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {count: 0};
         this.handleClick = this.handleClick.bind(this);
@@ -16,14 +17,14 @@ class TestUtils extends React.Component() {
 
     handleClick() {
         this.setState(state =>({
-            count: state/count + 1
+            count: state.count + 1
         }))
     }
 
     render() {
     return (
         <div>
-            <p>Kliknięto: {this.state.count} razy</p>
+            <p>Kliknięto {this.state.count} razy</p>
             <button onClick={this.handleClick}>Kliknij mnie</button>
         </div>
     );
