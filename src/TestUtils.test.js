@@ -1,5 +1,6 @@
 import TestUtils from "./TestUtils";
-import { act } from "react-dom/test-utils";
+import Counter from './TestUtils.js'
+import { act, isElement } from "react-dom/test-utils";
 import React from "react";
 import ReactDom from 'react-dom/client'
 
@@ -31,4 +32,8 @@ it('czy potrafi wyrenderowac i zmieniac licznik', () => {
     })
     expect(label.textContent).toBe('Kliknięto 1 razy');
     expect(document.title).toBe('Kliknięto 1 razy');
+});
+
+it('czy jest dowolny element reacta', () => {
+    isElement(Counter);
 });
